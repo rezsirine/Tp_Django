@@ -1,0 +1,10 @@
+<ul>
+    {% for m in meets %}
+        <li>{{ m.title }}</li>
+        <button><a href="{% url 'delete' m.id %}">delete</a></button>
+        <button><a href="{% url 'update' m.id %}">update</a></button>
+        <button><a href="{% url 'detail' m.id %}">details</a></button>
+        {%empty %}
+            <p>No meetings</p>
+    {% endfor %}
+</ul>
